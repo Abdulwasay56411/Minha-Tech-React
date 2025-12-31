@@ -29,7 +29,7 @@ const Navbar = () => {
         >
           <h1 className="text-3xl font-bold text-[#0A1A2C]">Minha Tech</h1>
           <div>
-            <ul className="flex gap-4">
+            <ul className="flex gap-6">
               {navLinks.map((item) => {
                 return (
                   <div key={item.id}>
@@ -93,26 +93,18 @@ export default Navbar;
 const navLinks = [
   {
     id: 1,
-    title: "Publishing",
-  },
-  {
-    id: 2,
-    title: "Sell App",
-  },
-  {
-    id: 3,
     title: "Services",
   },
   {
-    id: 4,
+    id: 2,
+    title: "Portfolio",
+  },
+  {
+    id: 3,
     title: "About",
   },
   {
-    id: 5,
-    title: "Careers",
-  },
-  {
-    id: 6,
+    id: 4,
     title: "Contact",
   },
 ];
