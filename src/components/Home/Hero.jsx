@@ -6,29 +6,64 @@ const Hero = () => {
     <div className="pt-30 pb-20 px-4 md:px-14">
       <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-8">
         <div className="w-full text-center px-5 lg:px-0 lg:text-left">
-          <h1 className="font-semibold text-3xl md:text-4xl lg:text-[55px] leading-snug text-black">
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: .5, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="font-semibold text-3xl md:text-4xl lg:text-[55px] leading-snug text-black"
+          >
             Building Scalable <br />
             <span className="text-[#06B8FF]">Mobile Apps</span>
-          </h1>
+          </motion.h1>
 
-          <h2 className="mt-4 text-2xl md:text-3xl lg:text-[45px] font-semibold text-black">
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: .8, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-4 text-2xl md:text-3xl lg:text-[45px] font-semibold text-black"
+          >
             for the Next Digital Generation
-          </h2>
+          </motion.h2>
 
-          <h3 className="mt-2 text-xl md:text-2xl lg:text-3xl font-semibold text-black">
+          <motion.h3
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-2 text-xl md:text-2xl lg:text-3xl font-semibold text-black"
+          >
             Android • iOS • Web • Cloud • AI
-          </h3>
-            <p className="mt-4 lg:w-125 text-lg text-black">
-              We design, develop, and scale high-performance apps used by
-              thousands of users worldwide.
-            </p>
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="mt-4 lg:w-125 text-lg text-black"
+          >
+            We design, develop, and scale high-performance apps used by
+            thousands of users worldwide.
+          </motion.p>
           <div className="flex gap-4 justify-center lg:justify-start mt-5 flex-wrap">
-            <button className="bg-[#06B8FF] text-white text-sm font-medium px-5 py-2 rounded-lg">
+            <motion.button
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="bg-[#06B8FF] text-white text-sm font-medium px-5 py-2 rounded-lg"
+            >
               Start Your Project
-            </button>
-            <button className="border border-[#06B8FF] text-[#06B8FF] text-sm font-medium px-5 py-2 rounded-lg">
+            </motion.button>
+            <motion.button
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="border border-[#06B8FF] text-[#06B8FF] text-sm font-medium px-5 py-2 rounded-lg">
               View our Project
-            </button>
+            </motion.button>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import CountUp from "react-countup";
+import { motion } from "framer-motion";
 
 const OurSucess = () => {
   const countRef = useRef(null);
@@ -20,7 +21,13 @@ const OurSucess = () => {
   }, []);
 
   return (
-    <div className="flex gap-10 mt-12 mb-8 flex-wrap justify-center">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="flex gap-10 mt-12 mb-8 flex-wrap justify-center"
+    >
       <div
         ref={countRef}
         className="grid grid-cols-1 sm:grid-cols-2 mx-5 gap-4"
@@ -55,15 +62,15 @@ const OurSucess = () => {
           reached millions of users worldwide.
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default OurSucess;
 
 const count = [
-    { id: 1, count: 5, suffix: "B+", title: "Downloads" },
-    { id: 2, count: 900, suffix: "+", title: "Published App" },
-    { id: 3, count: 30, suffix: "+", title: "Partners" },
-    { id: 4, count: 25, suffix: "+", title: "Employees" },
-  ];
+  { id: 1, count: 5, suffix: "B+", title: "Downloads" },
+  { id: 2, count: 900, suffix: "+", title: "Published App" },
+  { id: 3, count: 30, suffix: "+", title: "Partners" },
+  { id: 4, count: 25, suffix: "+", title: "Employees" },
+];

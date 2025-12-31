@@ -1,8 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const OurAbout = () => {
   return (
-    <div className="bg-[#E3E3E333] w-full  h-auto pt-10 pb-5">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-[#E3E3E333] w-full  h-auto pt-10 pb-5"
+    >
       <div className="flex gap-12 flex-wrap items-center justify-center">
         <div className="max-w-125 text-center lg:text-left w-full px-2">
           <h1 className=" text-[#06B8FF] text-xl font-medium">Our About</h1>
@@ -50,7 +57,7 @@ const OurAbout = () => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
