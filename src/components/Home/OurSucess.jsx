@@ -20,7 +20,7 @@ const OurSucess = () => {
   }, []);
 
   return (
-    <div className="flex gap-10 mt-12 flex-wrap justify-center">
+    <div className="flex gap-10 mt-12 mb-8 flex-wrap justify-center">
       <div
         ref={countRef}
         className="grid grid-cols-1 sm:grid-cols-2 mx-5 gap-4"
