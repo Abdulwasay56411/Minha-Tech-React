@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +28,15 @@ const Navbar = () => {
               : "bg-transparent"
           }`}
         >
-          <h1 className="text-3xl font-bold text-[#0A1A2C]">Minha Tech</h1>
+          <Link to="/" className="text-3xl font-bold text-[#0A1A2C]">Minha Tech</Link>
           <div>
             <ul className="flex gap-6">
               {navLinks.map((item) => {
                 return (
                   <div key={item.id}>
-                    <li className="cursor-pointer text-[18px] text-[#404040] transition transform duration-300 hover:text-[#06B8FF]">
+                    <Link to={item.path} className="cursor-pointer text-[18px] text-[#404040] transition transform duration-300 hover:text-[#06B8FF]">
                       {item.title}
-                    </li>
+                    </Link>
                   </div>
                 );
               })}
@@ -70,7 +71,7 @@ const Navbar = () => {
                 return (
                   <div key={item.id} className="flex flex-col items-center">
                     <ul>
-                      <li>{item.title}</li>
+                      <Link to={item.path}>{item.title}</Link>
                     </ul>
                   </div>
                 );
@@ -94,17 +95,21 @@ const navLinks = [
   {
     id: 1,
     title: "Services",
+    path: "/services"
   },
   {
     id: 2,
     title: "Portfolio",
+    path: "/portfolio"
   },
   {
     id: 3,
     title: "About",
+    path: "/about"
   },
   {
     id: 4,
     title: "Contact",
+    path: "/contact"
   },
 ];
