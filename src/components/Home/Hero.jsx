@@ -22,7 +22,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className="mt-4 text-2xl md:text-3xl lg:text-[45px] font-semibold text-black"
+            className="mt-4 text-2xl md:text-3xl lg:text-[40px] lg:text-nowrap font-semibold text-black"
           >
             for the Next Digital Generation
           </motion.h2>
