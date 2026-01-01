@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="pt-30 pb-20 px-4 md:px-14">
-      <div className="flex flex-col-reverse lg:flex-row items-center lg:justify-between gap-8">
-        <div className="w-full text-center px-5 lg:px-0 lg:text-left">
+    <div className="pt-30 flex flex-col items-center pb-20 px-4 md:px-14">
+      <div className="flex  flex-wrap lg:flex-nowrap justify-center items-center">
+        <div className=" text-center order-2 lg:order-1 px-5 lg:px-0 lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: .5, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
             className="font-semibold text-3xl md:text-4xl lg:text-[55px] leading-snug text-black"
           >
@@ -20,7 +20,7 @@ const Hero = () => {
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: .8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
             className="mt-4 text-2xl md:text-3xl lg:text-[45px] font-semibold text-black"
           >
@@ -57,18 +57,19 @@ const Hero = () => {
               Start Your Project
             </motion.button>
             <motion.button
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.6, ease: "easeOut" }}
-            viewport={{ once: true, amount: 0.2 }}
-            className="border border-[#06B8FF] text-[#06B8FF] text-sm font-medium px-5 py-2 rounded-lg">
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.6, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="border border-[#06B8FF] text-[#06B8FF] text-sm font-medium px-5 py-2 rounded-lg"
+            >
               View our Project
             </motion.button>
           </div>
         </div>
 
         {/* Right Image */}
-        <div className="w-full lg:w-[70%] flex justify-center lg:justify-end">
+        <div className="w-full order-1 lg:order-2 lg:w-[70%] flex justify-center lg:justify-end">
           <motion.img
             animate={{ y: ["0%", "-8%", "0%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
