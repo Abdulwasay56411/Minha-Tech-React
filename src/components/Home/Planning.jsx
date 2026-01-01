@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Planning = () => {
   return (
-    <div className="bg-[#E3E3E333] w-full h-auto p-10 ">
+    <div className="bg-[#E3E3E333] w-full h-auto p-10 my-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

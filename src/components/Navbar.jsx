@@ -56,7 +56,7 @@ const Navbar = () => {
               : "bg-transparent"
           }`}
         >
-          <h1 className="font-bold text-3xl text-[#0A1A2C]">Minha Tech</h1>
+          <Link to="/" className="font-bold text-3xl text-[#0A1A2C]">Minha Tech</Link>
           <div className="relative">
             <IoMenu
               onClick={handleMenu}
