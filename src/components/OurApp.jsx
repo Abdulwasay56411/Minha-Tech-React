@@ -10,7 +10,7 @@ const OurApp = () => {
   return (
     <div className="py-5">
       <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4">
-        <div className="w-full px-14  lg:w-1/2 lg:px-6 text-center lg:text-left">
+        <div className="w-full px-8  lg:w-1/2 lg:px-6 text-center lg:text-left">
           <h2 className="text-[#06B8FF] text-[26px] font-medium">Our App</h2>
           <h1 className="font-bold text-[56px] leading-15">
             Some of Our Hit Apps
