@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="pt-30 flex flex-col 2xl:ml-24 items-center  pb-20 px-4 md:px-14">
-      <div className="flex flex-wrap  lg:flex-nowrap justify-center items-center">
+    <div className="pt-30 flex flex-col items-center pb-20 px-4 md:px-14">
+      <div className="flex w-full flex-wrap lg:flex-nowrap px-10 items-center">
         <div className=" text-center order-2 lg:order-1 px-5 lg:px-0 lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
