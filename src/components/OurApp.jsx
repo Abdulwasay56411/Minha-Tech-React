@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -8,7 +9,13 @@ const OurApp = () => {
   const swiperRef = useRef(null);
 
   return (
-    <div className="py-5">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="py-5"
+    >
       <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4">
         <div className="w-full px-8  lg:w-1/2 lg:px-6 text-center lg:text-left">
           <h2 className="text-[#06B8FF] text-[26px] font-medium">Our App</h2>
@@ -49,21 +56,17 @@ const OurApp = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex justify-center gap-20 lg:justify-between lg:px-14 lg:gap-2 select-none mt-10">
-            <div
-              onClick={() => swiperRef.current?.slidePrev()}
-            >
+          <div className="flex justify-center gap-20 lg:justify-between  lg:px-14 lg:gap-2 select-none mt-10">
+            <div onClick={() => swiperRef.current?.slidePrev()}>
               <GrLinkPrevious className="text-3xl cursor-pointer" />
             </div>
-            <div
-              onClick={() => swiperRef.current?.slideNext()}
-            >
-              <GrLinkNext className="text-3xl cursor-pointer mr-20" />
+            <div onClick={() => swiperRef.current?.slideNext()}>
+              <GrLinkNext className="text-3xl cursor-pointer lg:mr-20" />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

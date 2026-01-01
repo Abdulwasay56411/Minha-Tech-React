@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -51,7 +52,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="py-10 overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="py-10 overflow-hidden"
+    >
       <div className="text-center px-5 lg:px-2">
         <h1 className="text-lg sm:text-[26px] font-semibold text-[#06B8FF]">
           Testimonials
@@ -161,7 +168,7 @@ const Testimonials = () => {
           background: #06b8ff !important;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 
