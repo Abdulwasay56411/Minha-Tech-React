@@ -26,7 +26,7 @@ const OurSucess = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="flex gap-10 mt-12 mb-8 flex-wrap justify-center"
+      className="flex gap-10 mt-5 mb-8 flex-wrap justify-center"
     >
       <div
         ref={countRef}

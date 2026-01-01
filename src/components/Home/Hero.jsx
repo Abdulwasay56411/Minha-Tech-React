@@ -11,7 +11,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className="font-semibold text-3xl md:text-4xl lg:text-[55px] leading-snug text-black"
+            className="font-semibold pt-6 lg:pt-0 text-3xl md:text-4xl lg:text-[55px] leading-snug text-black"
           >
             Building Scalable <br />
             <span className="text-[#06B8FF]">Mobile Apps</span>
@@ -41,7 +41,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className="mt-4 lg:w-125 text-lg text-black"
+            className="mt-4 lg:w-125 text-base text-gray-500"
           >
             We design, develop, and scale high-performance apps used by
             thousands of users worldwide.
