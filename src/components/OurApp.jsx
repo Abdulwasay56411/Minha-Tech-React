@@ -49,7 +49,7 @@ const OurApp = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex justify-between px-14 gap-2 select-none mt-10">
+          <div className="flex justify-center gap-20 lg:justify-between lg:px-14 lg:gap-2 select-none mt-10">
             <div
               onClick={() => swiperRef.current?.slidePrev()}
             >

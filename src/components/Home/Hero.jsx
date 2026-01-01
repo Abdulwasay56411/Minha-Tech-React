@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="pt-30 flex flex-col items-center pb-20 px-4 md:px-14">
-      <div className="flex  flex-wrap lg:flex-nowrap justify-center items-center">
+    <div className="pt-30 flex flex-col 2xl:ml-24 items-center  pb-20 px-4 md:px-14">
+      <div className="flex flex-wrap  lg:flex-nowrap justify-center items-center">
         <div className=" text-center order-2 lg:order-1 px-5 lg:px-0 lg:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
@@ -69,7 +69,7 @@ const Hero = () => {
         </div>
 
         {/* Right Image */}
-        <div className="w-full order-1 lg:order-2 lg:w-[70%] flex justify-center lg:justify-end">
+        <div className="w-full  order-1 lg:order-2 lg:w-[70%] flex justify-center lg:justify-end">
           <motion.img
             animate={{ y: ["0%", "-8%", "0%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
