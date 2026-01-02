@@ -36,14 +36,14 @@ const OurSucess = () => {
           return (
             <div
               key={item.id}
-              className=" px-3 py-6 w-58 h-34 border rounded-[9px] border-[#06B8FF40]"
+              className=" px-3 flex flex-col justify-center py-4 w-58 h-34 border rounded-[9px] border-[#06B8FF40]"
             >
-              <h1 className="bg-[#06B8FF] shadow-2xl flex justify-center items-center rounded-[7px] text-white w-21 h-15">
-                {startCount ? <CountUp end={item.count} duration={6} /> : 0}
+              <h1 className={`flex justify-center items-center font-bold text-4xl ${item.color}`}>
+                {startCount ? <CountUp end={item.count} duration={6} /> : ""}
                 {item.suffix}
               </h1>
 
-              <h2 className="font-medium text-lg pt-4 pb-2 text-[#000000]">
+              <h2 className="font-medium text-xl text-center text-[#000000]">
                 {item.title}
               </h2>
             </div>
@@ -69,8 +69,8 @@ const OurSucess = () => {
 export default OurSucess;
 
 const count = [
-  { id: 1, count: 5, suffix: "B+", title: "Downloads" },
-  { id: 2, count: 900, suffix: "+", title: "Published App" },
-  { id: 3, count: 30, suffix: "+", title: "Partners" },
-  { id: 4, count: 25, suffix: "+", title: "Employees" },
+  { id: 1, count: 5, suffix: "B+", title: "Downloads", color: "text-red-500", },
+  { id: 2, count: 900, suffix: "+", title: "Published App", color: "text-blue-500", },
+  { id: 3, count: 30, suffix: "+", title: "Partners", color: "text-green-500", },
+  { id: 4, count: 25, suffix: "+", title: "Employees", color: "text-[#06B8FF]", },
 ];

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoArrowUpCircleOutline } from "react-icons/io5";
+
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -7,7 +8,7 @@ const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
 
   const handleMenu = () => {
-    setIsOpen(prev => !prev);
+    setIsOpen((prev) => !prev);
   };
 
   useEffect(() => {
@@ -19,97 +20,79 @@ const Navbar = () => {
   }, []);
 
   return (
-    <>
-      <nav>
-        <div
-          className={`hidden w-full h-20 py-4 lg:flex z-50  md:fixed items-center px-14 justify-between ${
-            isScroll
-              ? "bg-white/20 backdrop-blur-2xl shadow-md"
-              : "bg-transparent"
-          }`}
-        >
-          <Link to="/" className="text-3xl font-bold text-[#0A1A2C]">Minha Tech</Link>
-          <div>
-            <ul className="flex gap-6">
-              {navLinks.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <Link to={item.path} className="cursor-pointer text-[18px] text-[#404040] transition transform duration-300 hover:text-[#06B8FF]">
-                      {item.title}
-                    </Link>
-                  </div>
-                );
-              })}
-            </ul>
-          </div>
-          <div>
-            <button className="bg-[#06B8FF] text-white text-[12px] font-semibold w-35.5 h-8.75 rounded-[9px] cursor-pointer ">
-              Publish Your App
-            </button>
-          </div>
+  
+    <nav className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${
+      isScroll ? "bg-white/20 backdrop-blur-2xl shadow-md" : "bg-transparent"
+    }`}>
+      <div className="flex flex-col items-center w-full">
+      
+        <div className="hidden lg:flex max-w-350 w-full h-20 py-4 items-center px-16 justify-between">
+          <Link to="/" className="text-3xl font-bold text-[#0A1A2C]">
+            Minha Tech
+          </Link>
+          
+          <ul className="flex gap-6">
+            {navLinks.map((item) => (
+              <li key={item.id}>
+                <Link
+                  to={item.path}
+                  className="cursor-pointer text-xl text-[#404040] transition transform duration-300 hover:text-[#06B8FF]"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <button className="bg-[#06B8FF] flex items-center gap-1 text-white text-sm font-semibold w-52 h-11 px-3 rounded-[9px] cursor-pointer">
+          <IoArrowUpCircleOutline size={25}/> Get Free Consultation
+          </button>
         </div>
-        {/* Mobile responsive menu */}
-        <div
-          className={`lg:hidden w-full z-50 fixed flex items-center justify-between py-4 px-2 ${
-            isScroll
-              ? "bg-white/20 backdrop-blur-2xl shadow-md"
-              : "bg-transparent"
-          }`}
-        >
-          <Link to="/" className="font-bold text-3xl text-[#0A1A2C]">Minha Tech</Link>
+
+        <div className="lg:hidden w-full flex items-center justify-between py-4 px-6">
+          <Link to="/" className="font-bold text-3xl text-[#0A1A2C]">
+            Minha Tech
+          </Link>
+          
           <div className="relative">
             <IoMenu
               onClick={handleMenu}
               className="text-5xl select-none cursor-pointer"
             />
+            
             <div
-              className={`fixed top-14 right-0 bg-green-200 w-52 shadow-md h-full transform transition duration-300 ${
+              className={`fixed top-20 right-0 bg-green-200 w-64 shadow-md h-screen transform transition-transform duration-300 ${
                 !isOpen ? "translate-x-full" : "translate-x-0"
               }`}
             >
-              {navLinks.map((item) => {
-                return (
-                  <div key={item.id} className="flex flex-col items-center">
-                    <ul>
-                      <Link to={item.path}>{item.title}</Link>
-                    </ul>
-                  </div>
-                );
-              })}
-              <div className="flex justify-center">
-                <button className="bg-[#06B8FF] text-white text-[12px] font-semibold w-35.5 h-8.75 rounded-[9px] cursor-pointer ">
-                  Publish Your App
+              <div className="flex flex-col gap-6 p-10">
+                {navLinks.map((item) => (
+                  <Link 
+                    key={item.id} 
+                    to={item.path} 
+                    onClick={() => setIsOpen(false)}
+                    className="text-2xl font-medium"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+                <button className="bg-[#06B8FF] text-white text-sm font-semibold w-full h-14 px-2 py-3 rounded-[9px]">
+                  Get Free Consultation
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
 
 const navLinks = [
-  {
-    id: 1,
-    title: "Services",
-    path: "/services"
-  },
-  {
-    id: 2,
-    title: "Portfolio",
-    path: "/portfolio"
-  },
-  {
-    id: 3,
-    title: "About",
-    path: "/about"
-  },
-  {
-    id: 4,
-    title: "Contact",
-    path: "/contact"
-  },
+  { id: 1, title: "Services", path: "/services" },
+  { id: 2, title: "Portfolio", path: "/portfolio" },
+  { id: 3, title: "About", path: "/about" },
+  { id: 4, title: "Contact", path: "/contact" },
 ];
