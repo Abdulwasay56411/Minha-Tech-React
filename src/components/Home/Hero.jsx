@@ -11,10 +11,10 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className="font-semibold pt-6 lg:pt-0 text-2xl sm:text-3xl md:text-4xl leading-16 text-black"
+            className="font-semibold pt-6 lg:pt-0 text-2xl sm:text-3xl md:text-4xl leading-12 md:leading-16 text-black"
           >
             Building Scalable <br />
-            <span className="text-[#06B8FF] text-5xl sm:text-6xl md:text-[64px]">Mobile Apps</span>
+            <span className="text-[#06B8FF] text-4xl sm:text-6xl md:text-[64px]">Mobile Apps</span>
           </motion.h1>
 
           <motion.h2
@@ -22,7 +22,7 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className="text-2xl md:text-3xl lg:text-4xl lg:text-nowrap leading-15 font-semibold text-black"
+            className="text-2xl md:text-3xl lg:text-4xl lg:text-nowrap md:leading-15 font-semibold text-black"
           >
             For The Next Digital Generation
           </motion.h2>
