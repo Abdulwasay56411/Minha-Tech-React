@@ -5,12 +5,20 @@ const ServicesHero = () => {
   return (
     <div className="pt-20 sm:pt-30 pb-20 overflow-hidden">
       <div className="relative flex flex-col items-center max-w-6xl mx-auto">
-        <h1 className="font-bold pb-10 text-[#000000] px-4 text-2xl sm:text-4xl text-center md:text-[46px]">
+        <motion.h1
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="font-bold pb-10 text-[#000000] px-4 text-2xl sm:text-4xl text-center md:text-[46px]"
+        >
           Your App, Your Custom Solution
-        </h1>
+        </motion.h1>
 
-        <div className="relative w-full max-w-136 flex justify-center px-4">
-          <img
+        <div className="relative w-full max-w-136 py-4 flex justify-center px-4">
+          <motion.img
+            animate={{ y: ["0%", "-8%", "0%"] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="w-70 sm:w-full h-auto object-contain z-10"
             src="/mobileServices.png"
             alt="Mobile App Display"
@@ -52,21 +60,30 @@ const ServicesHero = () => {
             />
           </motion.div>
         </div>
-        {/* Services Offer */}
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeInOut" }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-center"
+        >
           <p className="mt-10 font-semibold text-[#06B8FF] text-[26px] ">
             We can help you!
           </p>
           <p className="font-bold text-xl px-3  sm:text-3xl">
             We offer stand alone services as follows:
           </p>
-        </div>
+        </motion.div>
       </div>
       <div className="flex flex-col items-center">
         <div className="grid grid-cols-1 max-w-300 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:grid-cols-4 justify-items-center gap-y-6 my-10 px-10">
           {offerCard.map((item) => {
             return (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                viewport={{ once: true, amount: 0.2 }}
                 key={item.id}
                 className="w-56.5 h-54 border flex flex-col justify-center items-center py-5 px-4 border-[#DADADA] rounded-[11px]"
               >
@@ -83,12 +100,11 @@ const ServicesHero = () => {
                     {item.para}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
       </div>
-      {/* Turning App Ideas */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,8 +120,7 @@ const ServicesHero = () => {
                 src="/phone.png"
               />
               <h1 className="font-medium text-center lg:text-left text-2xl  md:text-3xl sm:text-5xl md:text-[58px]">
-              Turning App Ideas
-              Into Reality
+                Turning App Ideas Into Reality
               </h1>
               <p className="text-xl text-center my-2 lg:text-left text-[#494949] w-75 sm:w-117.5 mx-2">
                 Partner with Minha Tech to design, publish, and scale
