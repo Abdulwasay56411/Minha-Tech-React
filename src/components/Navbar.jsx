@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoMenu, IoArrowUpCircleOutline } from "react-icons/io5";
-
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,19 +26,19 @@ const Navbar = () => {
       <div className="flex flex-col items-center w-full">
       
         <div className="hidden lg:flex max-w-350 w-full h-20 py-4 items-center px-16 justify-between">
-          <Link to="/" className="text-3xl font-bold text-[#0A1A2C]">
+          <NavLink to="/" className="text-3xl font-bold text-[#0A1A2C]">
             Minha Tech
-          </Link>
+          </NavLink>
           
           <ul className="flex gap-6">
             {navLinks.map((item) => (
               <li key={item.id}>
-                <Link
+                <NavLink
                   to={item.path}
-                  className="cursor-pointer text-xl text-[#404040] transition transform duration-300 hover:text-[#06B8FF]"
+                  className={({isActive}) =>`cursor-pointer text-xl transition transform duration-300 hover:text-[#06B8FF] ${isActive ? "text-[#06B8FF] font-semibold" : "text-[#404040]"}`}
                 >
                   {item.title}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -50,9 +49,9 @@ const Navbar = () => {
         </div>
 
         <div className="lg:hidden w-full flex items-center justify-between py-4 px-6">
-          <Link to="/" className="font-bold text-3xl text-[#0A1A2C]">
+          <NavLink to="/" className="font-bold text-3xl text-[#0A1A2C]">
             Minha Tech
-          </Link>
+          </NavLink>
           
           <div className="relative">
             <IoMenu
@@ -67,14 +66,14 @@ const Navbar = () => {
             >
               <div className="flex flex-col gap-6 p-10">
                 {navLinks.map((item) => (
-                  <Link 
+                  <NavLink 
                     key={item.id} 
                     to={item.path} 
                     onClick={() => setIsOpen(false)}
-                    className="text-2xl font-medium"
+                    className={({isActive}) =>`cursor-pointer text-xl transition transform duration-300 hover:text-[#06B8FF] ${isActive ? "text-[#06B8FF] font-semibold" : "text-[#404040]"}`}
                   >
                     {item.title}
-                  </Link>
+                  </NavLink>
                 ))}
                 <button className="bg-[#06B8FF] text-white text-sm font-semibold w-full h-14 px-2 py-3 rounded-[9px]">
                   Get Free Consultation

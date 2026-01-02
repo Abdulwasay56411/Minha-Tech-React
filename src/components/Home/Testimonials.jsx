@@ -123,7 +123,7 @@ const Testimonials = () => {
         <div className="custom-dots flex justify-center items-center gap-2 mt-16"></div>
       </div>
 
-      <style jsx global>{`
+      <style>{`
         /* MOBILE: hide next/prev slides */
         @media (max-width: 767px) {
           .testimonial-swiper {
