@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const Contact = () => {
+const ContactUs = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -85,4 +85,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

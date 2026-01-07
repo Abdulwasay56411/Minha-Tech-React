@@ -1,7 +1,9 @@
 import React from "react";
+import offerCard from "../../offerCard";
 import { motion } from "framer-motion";
 
 const ServicesHero = () => {
+
   return (
     <div className="pt-20 sm:pt-30 pb-20 overflow-hidden">
       <div className="relative flex flex-col items-center max-w-6xl mx-auto">
@@ -76,33 +78,22 @@ const ServicesHero = () => {
         </motion.div>
       </div>
       <div className="flex flex-col items-center">
-        <div className="grid grid-cols-1 max-w-300 sm:grid-cols-2 md:grid-cols-3 gap-x-5 lg:grid-cols-4 justify-items-center gap-y-6 my-10 px-10">
-          {offerCard.map((item) => {
-            return (
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
-                viewport={{ once: true, amount: 0.2 }}
-                key={item.id}
-                className="w-56.5 h-54 border flex flex-col justify-center items-center py-5 px-4 border-[#DADADA] rounded-[11px]"
-              >
-                <img
-                  className="w-22 h-22 mb-4 object-cover"
-                  src={item.image}
-                  alt=""
-                />
-                <div className="text-center">
-                  <h1 className="text-sm font-bold mb-3 text-[#000000]">
-                    {item.title}
-                  </h1>
-                  <p className="text-[11px] mt-5 font-medium text-[#000000]">
-                    {item.para}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="grid grid-cols-1 max-w-300 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10 px-10">
+          {offerCard.map((item) => (
+            <motion.div
+              key={item.id}
+              whileHover={{ scale: 1.05 }}
+              className="w-56.5 h-54 border flex flex-col justify-center items-center py-5 px-4 rounded-[11px] border-[#DADADA]"
+            >
+              <img
+                className="w-22 h-22 mb-4 object-cover"
+                src={item.image}
+                alt=""
+              />
+              <h1 className="text-sm font-bold mb-3">{item.title}</h1>
+              <p className="text-[11px] text-center font-medium">{item.para}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
       <motion.div
@@ -170,54 +161,3 @@ const ServicesHero = () => {
 };
 
 export default ServicesHero;
-
-const offerCard = [
-  {
-    id: 1,
-    image: "/offer  (1).png",
-    title: "App Design",
-    para: "We craft clean, modern, and user-focused app interfaces.",
-  },
-  {
-    id: 2,
-    image: "/offer  (2).png",
-    title: "App Development",
-    para: "We support scalable, secure, and high-performance app development.",
-  },
-  {
-    id: 3,
-    image: "/offer  (3).png",
-    title: "User Experience",
-    para: "We enhance usability, flow, and overall user satisfaction.",
-  },
-  {
-    id: 4,
-    image: "/offer  (4).png",
-    title: "UI Equipment",
-    para: "We provide design systems, assets, and visual consistency.",
-  },
-  {
-    id: 5,
-    image: "/offer  (5).png",
-    title: "Creative",
-    para: "We support innovation through creative ideas and smart execution.",
-  },
-  {
-    id: 6,
-    image: "/offer  (6).png",
-    title: "Maintenance",
-    para: "We support updates, performance optimization, and long-term growth.",
-  },
-  {
-    id: 7,
-    image: "/offer  (7).png",
-    title: "Growth & Marketing",
-    para: "We help apps reach, engage, and grow the right audience.",
-  },
-  {
-    id: 8,
-    image: "/offer  (8).png",
-    title: "Publishing",
-    para: "We assist with app publishing, compliance, and store readiness.",
-  },
-];

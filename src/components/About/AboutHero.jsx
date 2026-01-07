@@ -9,7 +9,7 @@ const AboutHero = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.2 }}
-        className="pt-20"
+        className="pt-30"
       >
         <div
           className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center 
@@ -73,6 +73,20 @@ const AboutHero = () => {
           seamless, innovative, and impactful.
         </p>
       </div>
+      <div className="flex justify-center gap-5 mx-6 flex-wrap mb-10">
+        {buildingBox.map((item) =>{
+          return(
+            <div key={item.id} className="border border-[#DADADA] w-80 h-auto sm:w-88.75 sm:h-89.75 rounded-[10px] p-5">
+              <img src={item.image} className="w-32 h-32 mt-5" />
+              <div className="pt-4">
+              <h1 className="font-semibold text-2xl leading-6">{item.title}</h1>
+              <h2 className="font-semibold text-2xl text-[#06B8FF]">{item.head}</h2>
+              <p className="text-sm py-4">{item.para}</p>
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   );
 };
@@ -91,3 +105,28 @@ const box = [
     para: "Simple design, strong technology, real results.",
   },
 ];
+
+
+const buildingBox = [
+  {
+   id: 1, 
+   image: "/Developer.png",
+   title: "Developer-Focused",
+   head: "Approach",
+   para: "We let developers focus on building great apps while we handle publishing, growth, and monetization."
+  },
+  {
+   id: 2, 
+   image: "/support.png",
+   title: "End-to-End",
+   head: "Support",
+   para: "From idea to acquisition, we support apps at every stage of their journey."
+  },
+  {
+   id: 3, 
+   image: "/Growth.png",
+   title: "Growth-Driven",
+   head: "Vision",
+   para: "Our goal is to scale apps globally through smart strategies and continuous improvement."
+  },
+]
