@@ -49,21 +49,21 @@ const ContactHero = () => {
         <div className="text-center lg:text-right">
           <div>
             <input
-              className="border w-90 sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
+              className="border w-80 sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
               type="text"
               placeholder="Name"
             />
           </div>
           <div>
             <input
-              className="border w-90  sm:w-117.5 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
+              className="border w-80  sm:w-117.5 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
               type="email"
               placeholder="Email"
             />
           </div>
           <div>
             <input
-              className="border w-90  sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
+              className="border w-80  sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#D8D8D8]"
               type="text"
               placeholder="Please Select"
             />
@@ -71,7 +71,7 @@ const ContactHero = () => {
           <div>
             <textarea
               placeholder="Message"
-              className="resize-none outline-none border bg-white text-[#494949] border-[#D8D8D8] py-2 rounded-lg w-90 sm:w-117.5 h-36.5 px-6 "
+              className="resize-none outline-none border bg-white text-[#494949] border-[#D8D8D8] py-2 rounded-lg w-80 sm:w-117.5 h-36.5 px-6 "
             ></textarea>
           </div>
           <div>

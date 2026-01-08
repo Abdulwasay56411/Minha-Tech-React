@@ -19,7 +19,7 @@ const OurApp = () => {
       <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-4">
         <div className="w-full px-8  lg:w-1/2 lg:px-6 2xl:w-150 text-center lg:text-left">
           <h2 className="text-[#06B8FF] text-[26px] font-medium">Our App</h2>
-          <h1 className="font-bold text-[56px] leading-15">
+          <h1 className="font-bold text-2xl sm:text-4xl md:text-[56px] leading-15">
             Some of Our Hit Apps
           </h1>
           <p className="py-4 text-lg text-[#000000]">

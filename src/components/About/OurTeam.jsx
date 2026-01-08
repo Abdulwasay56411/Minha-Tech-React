@@ -78,21 +78,21 @@ const OurTeam = () => {
             <div className="text-center lg:text-right">
               <div>
                 <input
-                  className="border w-90 sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
+                  className="border w-80 sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
                   type="text"
                   placeholder="Name"
                 />
               </div>
               <div>
                 <input
-                  className="border w-90  sm:w-117.5 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
+                  className="border w-80  sm:w-117.5 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
                   type="email"
                   placeholder="Email"
                 />
               </div>
               <div>
                 <input
-                  className="border w-90  sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
+                  className="border w-80  sm:w-117.5 my-4 h-16 outline-none p-6 rounded-lg text-[#494949] bg-[#FFFFFF] border-[#06B8FF]"
                   type="text"
                   placeholder="Please Select"
                 />
@@ -100,7 +100,7 @@ const OurTeam = () => {
               <div>
                 <textarea
                   placeholder="Message"
-                  className="resize-none outline-none border bg-white text-[#494949] border-[#06B8FF] py-2 rounded-lg w-90 sm:w-117.5 h-36.5 px-6 "
+                  className="resize-none outline-none border bg-white text-[#494949] border-[#06B8FF] py-2 rounded-lg w-80 sm:w-117.5 h-36.5 px-6 "
                 ></textarea>
               </div>
               <div>
@@ -116,7 +116,7 @@ const OurTeam = () => {
         <h1 className="text-2xl font-bold text-[#06B8FF]">
           What you will get?
         </h1>
-        <h2 className="text-[43px] font-bold">All in One Support!</h2>
+        <h2 className="text-3xl sm:text-[43px] font-bold">All in One Support!</h2>
         <div className="grid grid-cols-1 max-w-300 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10 px-10">
           {offerCard.map((item) => {
             return (
