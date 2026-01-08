@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const ContactUs = () => {
+  const btnRef = useRef(null);
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  const handleMouseEnter = (e) => {
+    const rect = btnRef.current.getBoundingClientRect();
+    setPos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+    setHover(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHover(false);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -74,8 +91,29 @@ const ContactUs = () => {
               ></textarea>
             </div>
             <div>
-              <button className="bg-[#06B8FF] my-3 text-white font-medium rounded-lg cursor-pointer w-90 sm:w-117.5 h-16">
-                Submit
+              <button
+                ref={btnRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="bg-[#06B8FF] relative my-3 text-white font-medium rounded-lg cursor-pointer w-90 sm:w-117.5 h-16 overflow-hidden"
+              >
+                <motion.span
+                  className="absolute rounded-full w-full bg-[#0A1A2C]"
+                  style={{
+                    width: 40,
+                    height: 20,
+                    left: pos.x,
+                    top: pos.y,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: hover ? 25 : 0,
+                    opacity: hover ? 1 : 0,
+                  }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                />
+                <span className="relative z-10">Submit</span>
               </button>
             </div>
           </div>

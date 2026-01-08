@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,6 +7,22 @@ import "swiper/css";
 
 const OurApp = () => {
   const swiperRef = useRef(null);
+   const btnRef = useRef(null);
+    const [hover, setHover] = useState(false);
+    const [pos, setPos] = useState({ x: 0, y: 0 });
+  
+    const handleMouseEnter = (e) => {
+      const rect = btnRef.current.getBoundingClientRect();
+      setPos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+      setHover(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setHover(false);
+    };
 
   return (
     <motion.div
@@ -27,9 +43,30 @@ const OurApp = () => {
             millions of users. Each app reflects our commitment to quality,
             innovation, and intuitive user experiences.
           </p>
-          <button className="w-44 mt-3 mb-7 lg:my-0 h-12 bg-[#009FDE] rounded-[11px] font-medium text-[17px] text-white cursor-pointer hover:bg-[#008bc2] transition-all">
-            View More App
-          </button>
+             <button
+                          ref={btnRef}
+                          onMouseEnter={handleMouseEnter}
+                          onMouseLeave={handleMouseLeave}
+                          className="bg-[#06B8FF] relative my-3 text-white font-medium rounded-lg cursor-pointer w-44.5 h-11.5 overflow-hidden"
+                        >
+                          <motion.span
+                            className="absolute rounded-full w-full bg-[#0A1A2C]"
+                            style={{
+                              width: 20,
+                              height: 20,
+                              left: pos.x,
+                              top: pos.y,
+                              transform: "translate(-50%, -50%)",
+                            }}
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{
+                              scale: hover ? 25 : 0,
+                              opacity: hover ? 1 : 0,
+                            }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                          />
+                          <span className="relative z-10">View More App</span>
+                        </button>
         </div>
 
         <div className="w-full lg:w-2/3 2xl:w-200">

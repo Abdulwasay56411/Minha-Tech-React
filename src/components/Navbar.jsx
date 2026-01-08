@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { IoMenu, IoArrowUpCircleOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
+
+  const btnRef = useRef(null);
+  const [hover, setHover] = useState(false);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
 
   const handleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -36,7 +41,7 @@ const Navbar = () => {
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    `cursor-pointer text-xl transition transform duration-300 hover:text-[#06B8FF] ${
+                    `cursor-pointer text-xl transition duration-300 hover:text-[#06B8FF] ${
                       isActive
                         ? "text-[#06B8FF] font-semibold"
                         : "text-[#404040]"
@@ -48,14 +53,47 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <NavLink to="/consulation">
+            <motion.button
+              ref={btnRef}
+              onMouseEnter={(e) => {
+                const rect = btnRef.current.getBoundingClientRect();
+                setPos({
+                  x: e.clientX - rect.left,
+                  y: e.clientY - rect.top,
+                });
+                setHover(true);
+              }}
+              onMouseLeave={() => setHover(false)}
+              className="relative overflow-hidden bg-[#06B8FF] flex items-center gap-1 text-white text-sm font-semibold w-52 h-11 px-3 rounded-[9px] cursor-pointer"
+            >
+              <motion.span
+                className="absolute rounded-full bg-[#0A1A2C]"
+                style={{
+                  width: 20,
+                  height: 20,
+                  left: pos.x,
+                  top: pos.y,
+                  transform: "translate(-50%, -50%)",
+                }}
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{
+                  scale: hover ? 25 : 0,
+                  opacity: hover ? 1 : 0,
+                }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              />
 
-        <NavLink to="/consulation">
-        <button className="bg-[#06B8FF] flex items-center gap-1 text-white text-sm font-semibold w-52 h-11 px-3 rounded-[9px] cursor-pointer">
-            <IoArrowUpCircleOutline size={25} /> Get Free Consultation
-          </button>
-        </NavLink>
+              {/* Content */}
+              <span className="relative z-10 flex items-center gap-1">
+                <IoArrowUpCircleOutline size={25} />
+                Get Free Consultation
+              </span>
+            </motion.button>
+          </NavLink>
         </div>
 
+        {/* ================= MOBILE ================= */}
         <div className="lg:hidden w-full flex items-center justify-between py-4 px-6">
           <NavLink to="/" className="font-bold text-3xl text-[#0A1A2C]">
             Minha Tech
@@ -79,7 +117,7 @@ const Navbar = () => {
                     to={item.path}
                     onClick={() => setIsOpen(false)}
                     className={({ isActive }) =>
-                      `cursor-pointer text-xl transition transform duration-300 hover:text-[#06B8FF] ${
+                      `cursor-pointer text-xl transition duration-300 hover:text-[#06B8FF] ${
                         isActive
                           ? "text-[#06B8FF] font-semibold"
                           : "text-[#404040]"
@@ -89,6 +127,7 @@ const Navbar = () => {
                     {item.title}
                   </NavLink>
                 ))}
+
                 <NavLink to="/consulation">
                   <button className="bg-[#06B8FF] text-white text-sm font-semibold w-full h-14 px-2 py-3 rounded-[9px]">
                     Get Free Consultation

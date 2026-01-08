@@ -14,7 +14,9 @@ const Hero = () => {
             className="font-semibold pt-6 lg:pt-0 text-2xl sm:text-3xl md:text-4xl leading-12 md:leading-16 text-black"
           >
             Building Scalable <br />
-            <span className="text-[#06B8FF] text-4xl sm:text-6xl md:text-[64px]">Mobile Apps</span>
+            <span className="text-[#06B8FF] text-4xl sm:text-6xl md:text-[64px]">
+              Mobile Apps
+            </span>
           </motion.h1>
 
           <motion.h2
@@ -68,7 +70,6 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right Image */}
         <div className="w-full  order-1 lg:order-2 lg:w-[70%] flex justify-center lg:justify-end">
           <motion.img
             animate={{ y: ["0%", "-8%", "0%"] }}
